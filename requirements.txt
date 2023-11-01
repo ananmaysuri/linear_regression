@@ -1,0 +1,6 @@
+Flask
+torch
+pandas
+numpy
+matplotlib
+datetime
