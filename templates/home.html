@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Receipt Count Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}" method="post" enctype="multipart/form-data">
+      <input type="file" name="file" placeholder="file" required="required" /><br>
+      <br>
+      <br>
+        <button type="submit" class="btn btn-primary btn-block btn-large" value="Upload">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ <ul>
+    {% for key, value in output_dict.items() %}
+        <li>{{ key }}: {{ value }}</li>
+    {% endfor %}
+</ul>
+<br>
+<h1>Visualizations</h1>
+<img src = "{{ url_for('static', filename='predictions.png') }}" alt="Receipt Count Predictions">
+<br>
+<img src = "{{ url_for('static', filename='monthly_totals.png') }}" alt="Monthly Totals">
+</body>
+</html>
