@@ -1,7 +1,8 @@
 Flask
-torch==2.1.0+cpu
 pandas
 numpy
 matplotlib
 datetime
 gunicorn
+--find-links https://download.pytorch.org/whl/torch_stable.html
+torch==2.1.0+cpu
