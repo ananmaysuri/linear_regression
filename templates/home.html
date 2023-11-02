@@ -29,11 +29,13 @@
   
    
  </div>
- <ul>
+{% if output_dict %}
+<ul>
     {% for key, value in output_dict.items() %}
         <li>{{ key }}: {{ value }}</li>
     {% endfor %}
 </ul>
+{% endif %}
 <br>
 <h1>Visualizations</h1>
 <img src = "{{ url_for('static', filename='predictions.png') }}" alt="Receipt Count Predictions">
