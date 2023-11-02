@@ -1,5 +1,6 @@
 build:
   docker:
     web: Dockerfile
+
 run:
-  web: bundle exec puma -C config/puma.rb
+  web: gunicorn --workers=4 --bind 0.0.0.0:$PORT app:app
